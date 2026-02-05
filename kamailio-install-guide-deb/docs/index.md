@@ -5,7 +5,7 @@ For more details about Kamailio Project visit: [kamailio.org](https://www.kamail
 ## Overview ##
 
 Kamailio packages are included in the official Debian Stable repository since version 8.0,
-and continues to be in the current Stable (9.x, codename Stretch).
+and continues to be in the current Stable (13.x, codename Trixie).
 
 This tutorial should just work for latest Ubuntu versions as well.
 
@@ -34,19 +34,29 @@ Adding the signing key for the repository:
 wget -O- https://deb.kamailio.org/kamailiodebkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/kamailio.gpg
 ```
 
-For example, if you want to install Kamailio v6.0.x on Debian Bullseye (11.x), add the next
+**Note:** if you downloaded the key in the past, you may need to delete the old key
+and download the new one.
+
+For example, if you want to install Kamailio v6.1.x on Debian Bullseye (11.x), add the next
 URLs to APT configuration:
 
 ```
-deb     [signed-by=/usr/share/keyrings/kamailio.gpg] http://deb.kamailio.org/kamailio60 bullseye main
-deb-src [signed-by=/usr/share/keyrings/kamailio.gpg] http://deb.kamailio.org/kamailio60 bullseye main
+deb     [signed-by=/usr/share/keyrings/kamailio.gpg] http://deb.kamailio.org/kamailio61 bullseye main
+deb-src [signed-by=/usr/share/keyrings/kamailio.gpg] http://deb.kamailio.org/kamailio61 bullseye main
 ```
 
 For Debian Bookworm (12.x):
 
 ```
-deb     [signed-by=/usr/share/keyrings/kamailio.gpg] http://deb.kamailio.org/kamailio60 bookworm main
-deb-src [signed-by=/usr/share/keyrings/kamailio.gpg] http://deb.kamailio.org/kamailio60 bookworm main
+deb     [signed-by=/usr/share/keyrings/kamailio.gpg] http://deb.kamailio.org/kamailio61 bookworm main
+deb-src [signed-by=/usr/share/keyrings/kamailio.gpg] http://deb.kamailio.org/kamailio61 bookworm main
+```
+
+For Debian Trixie (13.x):
+
+```
+deb     [signed-by=/usr/share/keyrings/kamailio.gpg] http://deb.kamailio.org/kamailio61 trixie main
+deb-src [signed-by=/usr/share/keyrings/kamailio.gpg] http://deb.kamailio.org/kamailio61 trixie main
 ```
 
 For older Debian/Ubuntu versions, adding signing key for the repository is done with:
@@ -58,9 +68,12 @@ wget -O- http://deb.kamailio.org/kamailiodebkey.gpg | sudo apt-key add -
 The repository URLs are:
 
 ```
-deb     http://deb.kamailio.org/kamailio60 buster main
-deb-src http://deb.kamailio.org/kamailio60 buster main
+deb     http://deb.kamailio.org/kamailio61 buster main
+deb-src http://deb.kamailio.org/kamailio61 buster main
 ```
+
+To install Kamailio `6.0.x` series instead of `6.1.x`, replace `kamailio61` with
+`kamailio60` in the URLs above.
 
 ### APT Repositories Archive ###
 
